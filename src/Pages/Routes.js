@@ -4,6 +4,7 @@ import Home from './Home/Home'
 import Nopage from './NoPage/Nopage'
 import Header from "../components/Header/Header"
 import Login from './Login/out/Login'
+import UserData from './userData/UserData'
 
 export default function Index() {
   return (
@@ -14,6 +15,7 @@ export default function Index() {
         <Route path="/" element={<Home/>}/>
 
         <Route path="/login" element={<Login/>}/>
+        <Route path="/users" element={<UserData/>}/>
         
         <Route path="*" element={<Nopage/>}/>
 

@@ -1,0 +1,16 @@
+body{
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+i{
+    color: whitesmoke;
+    text-transform: capitalize;
+}
+span{
+    text-decoration: underline;
+}
+.card{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+background-color: transparent !important;
+}
