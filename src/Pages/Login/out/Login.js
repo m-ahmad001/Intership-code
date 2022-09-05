@@ -1,30 +1,14 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TestContext } from "../../../context/TestContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./login.css";
 
 export default function Login() {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (password.length < 6) {
-      toast.warn("Password is less Then 6", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
-      return;
-    }
-    console.log(userName);
-    console.log(password);
-  };
+  const { myName , userName,setUserName,setPassword, password,handleSubmit } = useContext(TestContext);
+  
+  
   return (
     <div className="py-5 vh-100 flogin">
       <div className="container">
@@ -38,10 +22,8 @@ export default function Login() {
                     <input
                       type="text"
                       className="form-control bg-transparent border border-dark "
-                      placeholder="Enter Your Name"
-                      onChange={(e) => {
-                        setUserName(e.target.value);
-                      }}
+                      placeholder="Enter Your Name"c
+                      onChange={(e)=>{setUserName(e.target.value)}}
                     />
                   </div>
                 </div>
@@ -51,21 +33,29 @@ export default function Login() {
                       type="password"
                       className="form-control bg-transparent border border-dark"
                       placeholder="Enter Your Password"
-                      onChange={(e) => {
-                        setPassword(e.target.value);
-                      }}
+                      onChange={(e)=>{setPassword(e.target.value)}}
                     />
                   </div>
                 </div>
                 <div className="row">
-                  <div className="col"><button className="btn btn-success w-100 my-3" type="submit">
+                  <div className="col">
+                    <button
+                      className="btn btn-success w-100 my-3"
+                      type="submit"
+                    >
                       Login
                       <ToastContainer />
-                    </button></div>
-                  <div className="col"><button className="btn btn-success w-100 my-3" type="submit">
-                      Forget Password
+                    </button>
+                  </div>
+                  <div className="col">
+                    <button
+                      className="btn btn-success w-100 my-3"
+                      type="submit"
+                    >
+                      {myName}
                       <ToastContainer />
-                    </button></div>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>
